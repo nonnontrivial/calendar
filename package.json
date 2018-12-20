@@ -1,0 +1,51 @@
+{
+  "name": "@nonnontrivial/calendar",
+  "version": "0.0.1",
+  "description": "simple, selectable dates for React",
+  "main": "lib/index.cjs.js",
+  "repository": "https://github.com/nonnontrivial/calendar",
+  "author": "Kevin Donahue <nonnontrivial@gmail.com>",
+  "license": "MIT",
+  "keywords": ["react", "calendar", "hooks"],
+  "module": "lib/index.esm.js",
+  "files": ["lib"],
+  "prettier": {
+    "singleQuote": true,
+    "printWidth": 90
+  },
+  "scripts": {
+    "start": "NODE_ENV=production rollup -c -w",
+    "build": "del lib && NODE_ENV=production rollup -c",
+    "test": "jest --watch --notify",
+    "flow": "flow"
+  },
+  "peerDependencies": {
+    "react": "^16.7.x",
+    "react-dom": "^16.7.x"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.2.2",
+    "@babel/plugin-proposal-class-properties": "^7.0.0",
+    "@babel/plugin-transform-runtime": "^7.0.0",
+    "@babel/preset-env": "^7.0.0",
+    "@babel/preset-flow": "^7.0.0",
+    "@babel/preset-react": "^7.0.0",
+    "babel-core": "^7.0.0-bridge.0",
+    "babel-jest": "^23.6.0",
+    "del-cli": "^1.1.0",
+    "flow-bin": "^0.89.0",
+    "jest": "^23.6.0",
+    "jest-react-profiler": "^0.1.2",
+    "react": "^16.7.0-alpha.2",
+    "react-dom": "^16.7.0-alpha.2",
+    "react-testing-library": "^5.4.0",
+    "rollup": "^0.68.0",
+    "rollup-plugin-babel": "^4.1.0",
+    "rollup-plugin-commonjs": "^9.2.0",
+    "rollup-plugin-node-resolve": "^4.0.0",
+    "rollup-plugin-replace": "^2.1.0"
+  },
+  "dependencies": {
+    "@babel/runtime": "^7.0.0"
+  }
+}

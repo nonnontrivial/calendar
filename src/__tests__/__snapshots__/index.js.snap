@@ -1,0 +1,232 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Calendar handles obscure dates 1`] = `
+<table>
+  <tbody>
+    <tr>
+      <td
+        style="text-align: center; padding: 0.421rem; border-radius: 0.221rem; cursor: default;"
+      />
+      <td
+        style="text-align: center; padding: 0.421rem; border-radius: 0.221rem; cursor: default;"
+      />
+      <td
+        style="text-align: center; padding: 0.421rem; border-radius: 0.221rem; cursor: default;"
+      />
+      <td
+        style="text-align: center; padding: 0.421rem; border-radius: 0.221rem; cursor: default;"
+      />
+      <td
+        style="text-align: center; padding: 0.421rem; border-radius: 0.221rem; cursor: default;"
+      />
+      <td
+        style="text-align: center; padding: 0.421rem; border-radius: 0.221rem; cursor: default;"
+      />
+      <td
+        style="text-align: center; padding: 0.421rem; border-radius: 0.221rem; cursor: pointer;"
+      >
+        1
+      </td>
+    </tr>
+    <tr>
+      <td
+        style="text-align: center; padding: 0.421rem; border-radius: 0.221rem; cursor: pointer;"
+      >
+        2
+      </td>
+      <td
+        style="text-align: center; padding: 0.421rem; border-radius: 0.221rem; cursor: pointer;"
+      >
+        3
+      </td>
+      <td
+        style="text-align: center; padding: 0.421rem; border-radius: 0.221rem; cursor: pointer;"
+      >
+        4
+      </td>
+      <td
+        style="text-align: center; padding: 0.421rem; border-radius: 0.221rem; cursor: pointer;"
+      >
+        5
+      </td>
+      <td
+        style="text-align: center; padding: 0.421rem; border-radius: 0.221rem; cursor: pointer;"
+      >
+        6
+      </td>
+      <td
+        style="text-align: center; padding: 0.421rem; border-radius: 0.221rem; cursor: pointer;"
+      >
+        7
+      </td>
+      <td
+        style="text-align: center; padding: 0.421rem; border-radius: 0.221rem; cursor: pointer;"
+      >
+        8
+      </td>
+    </tr>
+    <tr>
+      <td
+        style="text-align: center; padding: 0.421rem; border-radius: 0.221rem; cursor: pointer;"
+      >
+        9
+      </td>
+      <td
+        style="text-align: center; padding: 0.421rem; border-radius: 0.221rem; cursor: pointer;"
+      >
+        10
+      </td>
+      <td
+        style="text-align: center; padding: 0.421rem; border-radius: 0.221rem; cursor: pointer;"
+      >
+        11
+      </td>
+      <td
+        style="text-align: center; padding: 0.421rem; border-radius: 0.221rem; cursor: pointer;"
+      >
+        12
+      </td>
+      <td
+        style="text-align: center; padding: 0.421rem; border-radius: 0.221rem; cursor: pointer;"
+      >
+        13
+      </td>
+      <td
+        style="text-align: center; padding: 0.421rem; border-radius: 0.221rem; cursor: pointer;"
+      >
+        14
+      </td>
+      <td
+        style="text-align: center; padding: 0.421rem; border-radius: 0.221rem; cursor: pointer;"
+      >
+        15
+      </td>
+    </tr>
+    <tr>
+      <td
+        style="text-align: center; padding: 0.421rem; border-radius: 0.221rem; cursor: pointer;"
+      >
+        16
+      </td>
+      <td
+        style="text-align: center; padding: 0.421rem; border-radius: 0.221rem; cursor: pointer;"
+      >
+        17
+      </td>
+      <td
+        style="text-align: center; padding: 0.421rem; border-radius: 0.221rem; cursor: pointer;"
+      >
+        18
+      </td>
+      <td
+        style="text-align: center; padding: 0.421rem; border-radius: 0.221rem; cursor: pointer; box-shadow: 0 4px 6px 2px rgba(0, 0, 0, .10);"
+      >
+        19
+      </td>
+      <td
+        style="text-align: center; padding: 0.421rem; border-radius: 0.221rem; cursor: pointer;"
+      >
+        20
+      </td>
+      <td
+        style="text-align: center; padding: 0.421rem; border-radius: 0.221rem; cursor: pointer;"
+      >
+        21
+      </td>
+      <td
+        style="text-align: center; padding: 0.421rem; border-radius: 0.221rem; cursor: pointer;"
+      >
+        22
+      </td>
+    </tr>
+    <tr>
+      <td
+        style="text-align: center; padding: 0.421rem; border-radius: 0.221rem; cursor: pointer;"
+      >
+        23
+      </td>
+      <td
+        style="text-align: center; padding: 0.421rem; border-radius: 0.221rem; cursor: pointer;"
+      >
+        24
+      </td>
+      <td
+        style="text-align: center; padding: 0.421rem; border-radius: 0.221rem; cursor: pointer;"
+      >
+        25
+      </td>
+      <td
+        style="text-align: center; padding: 0.421rem; border-radius: 0.221rem; cursor: pointer;"
+      >
+        26
+      </td>
+      <td
+        style="text-align: center; padding: 0.421rem; border-radius: 0.221rem; cursor: pointer;"
+      >
+        27
+      </td>
+      <td
+        style="text-align: center; padding: 0.421rem; border-radius: 0.221rem; cursor: pointer;"
+      >
+        28
+      </td>
+      <td
+        style="text-align: center; padding: 0.421rem; border-radius: 0.221rem; cursor: pointer;"
+      >
+        29
+      </td>
+    </tr>
+    <tr>
+      <td
+        style="text-align: center; padding: 0.421rem; border-radius: 0.221rem; cursor: pointer;"
+      >
+        30
+      </td>
+      <td
+        style="text-align: center; padding: 0.421rem; border-radius: 0.221rem; cursor: pointer;"
+      >
+        31
+      </td>
+      <td
+        style="text-align: center; padding: 0.421rem; border-radius: 0.221rem; cursor: default;"
+      />
+      <td
+        style="text-align: center; padding: 0.421rem; border-radius: 0.221rem; cursor: default;"
+      />
+      <td
+        style="text-align: center; padding: 0.421rem; border-radius: 0.221rem; cursor: default;"
+      />
+      <td
+        style="text-align: center; padding: 0.421rem; border-radius: 0.221rem; cursor: default;"
+      />
+      <td
+        style="text-align: center; padding: 0.421rem; border-radius: 0.221rem; cursor: default;"
+      />
+    </tr>
+  </tbody>
+</table>
+`;
+
+exports[`MonthCycler uses locale passed to context 1`] = `
+<p>
+  Dec
+   
+  2018
+</p>
+`;
+
+exports[`defaults to current date if none provided 1`] = `
+<p>
+  Dec
+   
+  2018
+</p>
+`;
+
+exports[`displays date as string 1`] = `
+<p>
+  Dec
+   
+  2018
+</p>
+`;
