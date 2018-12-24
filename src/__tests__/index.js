@@ -24,7 +24,7 @@ test('MonthCycler does not overcommit', () => {
 test('MonthCycler can accomodate arbitrary date range', () => {
   let onChange = jest.fn();
   let value = { date: new Date(), onChange };
-  let { container, getByText } = render(
+  let { container, getByText, debug } = render(
     <DateContext.Provider value={value}>
       <MonthCycler />
       <Calendar />
@@ -50,6 +50,17 @@ test('MonthCycler throws if rendered without context', () => {
 
 test('Calendar throws if rendered without context', () => {
   expect(() => render(<Calendar />)).toThrow();
+});
+
+test('Calendar does not overcommit', () => {
+  let day = new Date().getDate().toString();
+  let { container, getByText } = renderWithContext(withProfiler(Calendar));
+  expect(container.querySelector('table')).toHaveCommittedTimes(undefined);
+  let i = 10;
+  while (i--) {
+    fireEvent.click(getByText(day));
+  }
+  expect(container.querySelector('table')).toHaveCommittedTimes(0);
 });
 
 test('Calendar accomodates className', () => {
