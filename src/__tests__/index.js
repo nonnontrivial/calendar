@@ -30,11 +30,18 @@ test('MonthCycler can accomodate arbitrary date range', () => {
       <Calendar />
     </DateContext.Provider>
   );
+  // debug();
   let i = 1000;
   while (i--) {
     fireEvent.click(getByText('←'));
   }
   expect(onChange).toHaveBeenCalledTimes(1000);
+});
+
+test('MonthCycler accomodates className', () => {
+  let className = 'c';
+  let { container } = renderWithContext(MonthCycler, {}, { className });
+  expect(container.querySelector('div').hasAttribute('class')).toBe(true);
 });
 
 test('MonthCycler throws if rendered without context', () => {
@@ -45,11 +52,15 @@ test('Calendar throws if rendered without context', () => {
   expect(() => render(<Calendar />)).toThrow();
 });
 
+test('Calendar accomodates className', () => {
+  let className = 'c';
+  let { container, debug } = renderWithContext(Calendar, {}, { className });
+  expect(container.querySelector('table').hasAttribute('class')).toBe(true);
+});
+
 test('Calendar can render day names', () => {
   let { getByText } = renderWithContext(Calendar, {}, { weekdays: true });
-  dayNames.forEach(d => {
-    expect(getByText(d)).not.toBeUndefined();
-  });
+  dayNames.forEach(d => expect(getByText(d)).not.toBeUndefined());
 });
 
 test('Calendar renders array of weekdays', () => {

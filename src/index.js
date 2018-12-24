@@ -28,7 +28,7 @@ function MonthCycler(props: { className?: string }): React$Node {
     [m]
   );
   return (
-    <div className={props.className || ''}>
+    <div className={props.className}>
       <p>
         {monthNames[m]} {y}
       </p>
@@ -98,7 +98,7 @@ function Calendar(props: {
     return d ? props.selectedDayStyle || {} : {};
   };
   return (
-    <table className={props.className || ''}>
+    <table className={props.className}>
       <tbody>
         {props.weekdays && (
           <tr>
