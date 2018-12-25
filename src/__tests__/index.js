@@ -77,6 +77,16 @@ test('Calendar accomodates className', () => {
   expect(container.querySelector('table').hasAttribute('class')).toBe(true);
 });
 
+test('Calendar spreads day style over selected day', () => {
+  let selectedDayStyle = { opacity: '0.5', fontSize: '2rem' };
+  let { getByText } = renderWithContext(Calendar, {}, { selectedDayStyle });
+  expect(
+    getByText(new Date().getDate().toString())
+      .getAttribute('style')
+      .endsWith('opacity: 0.5; font-size: 2rem;')
+  ).toBe(true);
+});
+
 test('Calendar can render day names', () => {
   let { getByText } = renderWithContext(Calendar, {}, { weekdays: true });
   dayNames.forEach(d => expect(getByText(d)).not.toBeUndefined());
