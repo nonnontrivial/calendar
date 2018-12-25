@@ -14,28 +14,36 @@ function renderWithContext(Component, value, componentProps = {}) {
   );
 }
 
-test('MonthCycler does not overcommit', () => {
-  let { container, getByText } = renderWithContext(withProfiler(MonthCycler));
-  expect(container.querySelector('p')).toHaveCommittedTimes(undefined);
-  fireEvent.click(getByText('←'));
-  expect(container.querySelector('p')).toHaveCommittedTimes(0);
-});
-
-test('MonthCycler can accomodate arbitrary date range', () => {
+test('DateContext can accomodate arbitrary date range', () => {
   let onChange = jest.fn();
   let value = { date: new Date(), onChange };
-  let { container, getByText, debug } = render(
+  let { container, getByText, rerender } = render(
     <DateContext.Provider value={value}>
       <MonthCycler />
       <Calendar />
     </DateContext.Provider>
   );
-  // debug();
   let i = 1000;
   while (i--) {
     fireEvent.click(getByText('←'));
   }
   expect(onChange).toHaveBeenCalledTimes(1000);
+  expect(getByText('1')).not.toBeUndefined();
+  let y = new Date().getFullYear() + 1000;
+  rerender(
+    <DateContext.Provider value={{ ...value, date: new Date(y, 0) }}>
+      <MonthCycler />
+      <Calendar />
+    </DateContext.Provider>
+  );
+  expect(container.querySelector('p').textContent.endsWith(y)).toBe(true);
+});
+
+test('MonthCycler does not overcommit', () => {
+  let { container, getByText } = renderWithContext(withProfiler(MonthCycler));
+  expect(container.querySelector('p')).toHaveCommittedTimes(undefined);
+  fireEvent.click(getByText('←'));
+  expect(container.querySelector('p')).toHaveCommittedTimes(0);
 });
 
 test('MonthCycler accomodates className', () => {
