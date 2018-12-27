@@ -87,14 +87,14 @@ test('Calendar spreads day style over selected day', () => {
 });
 
 test('Calendar can render day names', () => {
-  let { getByText } = renderWithContext(Calendar, {}, { weekdays: true });
+  let { getByText } = renderWithContext(Calendar, {}, { dayNames: true });
   dayNames.forEach(d => expect(getByText(d)).not.toBeUndefined());
 });
 
-test('Calendar renders array of weekdays', () => {
-  let weekdays = ['S', 'M', 'T'];
-  let { container } = renderWithContext(Calendar, {}, { weekdays });
-  expect(container.querySelector('tr').textContent).toBe(weekdays.join(''));
+test('Calendar renders array of day names', () => {
+  let dayNames = ['S', 'M', 'T'];
+  let { container } = renderWithContext(Calendar, {}, { dayNames });
+  expect(container.querySelector('tr').textContent).toBe(dayNames.join(''));
 });
 
 test('Calendar passes selected date to onChange', () => {

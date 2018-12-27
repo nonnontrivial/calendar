@@ -41,7 +41,7 @@ function MonthCycler(props: { className?: string }): React$Node {
 function Calendar(props: {
   className?: string,
   selectedDayStyle?: {},
-  weekdays?: boolean | string[]
+  dayNames?: boolean | string[]
 }): React$Node {
   let { date, onChange } = React.useContext(DateContext);
   let dayMatrix = React.useMemo(
@@ -100,9 +100,9 @@ function Calendar(props: {
   return (
     <table className={props.className}>
       <tbody>
-        {props.weekdays && (
+        {props.dayNames && (
           <tr>
-            {(Array.isArray(props.weekdays) ? props.weekdays : dayNames).map((d, i) => (
+            {(Array.isArray(props.dayNames) ? props.dayNames : dayNames).map((d, i) => (
               <td key={i}>{d}</td>
             ))}
           </tr>
