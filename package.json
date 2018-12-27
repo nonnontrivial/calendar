@@ -1,6 +1,6 @@
 {
   "name": "@nonnontrivial/calendar",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "simple, selectable dates for React",
   "main": "lib/index.cjs.js",
   "repository": "https://github.com/nonnontrivial/calendar",
