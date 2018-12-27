@@ -47,8 +47,7 @@ test('MonthCycler does not overcommit', () => {
 });
 
 test('MonthCycler accomodates className', () => {
-  let className = 'c';
-  let { container } = renderWithContext(MonthCycler, {}, { className });
+  let { container } = renderWithContext(MonthCycler, {}, { className: 'c' });
   expect(container.querySelector('div').hasAttribute('class')).toBe(true);
 });
 
@@ -103,5 +102,8 @@ test('Calendar passes selected date to onChange', () => {
   let { container, getByText } = renderWithContext(Calendar, { onChange });
   expect(container.querySelector('td')).not.toBeUndefined();
   fireEvent.click(getByText('1'));
-  expect(onChange).toHaveBeenCalled();
+  expect(onChange).toHaveBeenCalledTimes(1);
+  expect(onChange).toHaveBeenCalledWith(
+    new Date(new Date().getFullYear(), new Date().getMonth())
+  );
 });
