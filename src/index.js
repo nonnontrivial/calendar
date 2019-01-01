@@ -94,6 +94,15 @@ function Calendar(props: {
     },
     [date.getMonth()]
   );
+  let getDefaultDayStyle = (d: null | boolean): void => {
+    return {
+      textAlign: 'center',
+      userSelect: 'none',
+      padding: '0.421rem',
+      borderRadius: '0.221rem',
+      cursor: d ? 'pointer' : 'default'
+    };
+  };
   let getDayStyle = (d: null | boolean): void => {
     return d ? props.selectedDayStyle || {} : {};
   };
@@ -113,11 +122,7 @@ function Calendar(props: {
               <td
                 key={j}
                 style={{
-                  textAlign: 'center',
-                  userSelect: 'none',
-                  padding: '0.421rem',
-                  borderRadius: '0.221rem',
-                  cursor: day ? 'pointer' : 'default',
+                  ...getDefaultDayStyle(day),
                   ...getDayStyle(day && day.getDate() === date.getDate())
                 }}
                 onClick={(): void => {
