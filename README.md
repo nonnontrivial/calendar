@@ -5,7 +5,7 @@
 requires the following:
 
 ```
-react@next react-dom@next
+react@latest react-dom@latest
 ```
 
 ## Installation
@@ -16,12 +16,12 @@ npm i -S @nonnontrivial/calendar
 
 ## An Example
 
-```
+```js
 import { DateContext, MonthCycler, Calendar } from '@nonnontrivial/calendar';
 
 function Sundial(props) {
   let [timeString, setTimeString] = React.useState(null);
-  let onChange = React.useCallback((date) => {
+  let onChange = React.useCallback(date => {
     setTimeString(date.toTimeString());
   }, []);
   return (
