@@ -7,6 +7,7 @@ function MonthCycler(props: { className?: string }): React$Node {
   const { date, onChange } = React.useContext(DateContext);
   const m = date.getMonth();
   const y = date.getFullYear();
+  // Handle previous month click
   const onPrev = React.useCallback(() => {
     const month = (m - 1 + monthNames.length) % monthNames.length;
     if (m === 0) {
@@ -14,6 +15,7 @@ function MonthCycler(props: { className?: string }): React$Node {
     }
     onChange(new Date(y, month));
   }, [m]);
+  // Handle next month click
   const onNext = React.useCallback(() => {
     const month = (m + 1) % monthNames.length;
     if (m === monthNames.length - 1) {
@@ -38,19 +40,20 @@ function Calendar(props: {
   dayNames?: boolean | string[]
 }): React$Node {
   const { date, onChange } = React.useContext(DateContext);
+  // Build 2d array representing the days in the month
   const dayMatrix = React.useMemo(() => {
     let d = 1;
     const dm = [];
-    const buildDate = (d: number) => new Date(date.getFullYear(), date.getMonth(), d);
+    const buildDateObj = (d: number) => new Date(date.getFullYear(), date.getMonth(), d);
     while (true) {
-      if (buildDate(d).getMonth() !== buildDate(d + 1).getMonth()) {
+      if (buildDateObj(d).getMonth() !== buildDateObj(d + 1).getMonth()) {
         if (dm[dm.length - 1].length === dayNames.length) {
-          dm.push([buildDate(d)]);
+          dm.push([buildDateObj(d)]);
         } else {
-          dm[dm.length - 1].push(buildDate(d));
+          dm[dm.length - 1].push(buildDateObj(d));
         }
         let i = dayNames.indexOf(
-          buildDate(d)
+          buildDateObj(d)
             .toString()
             .slice(0, 3)
         );
@@ -61,15 +64,15 @@ function Calendar(props: {
         break;
       }
       if (
-        buildDate(d)
+        buildDateObj(d)
           .toString()
           .toLowerCase()
           .startsWith(dayNames[0].toLowerCase())
       ) {
-        dm.push([buildDate(d)]);
+        dm.push([buildDateObj(d)]);
       } else if (d === 1) {
         let i = dayNames.indexOf(
-          buildDate(d)
+          buildDateObj(d)
             .toString()
             .slice(0, 3)
         );
@@ -77,15 +80,15 @@ function Calendar(props: {
         while (i--) {
           dm[0].push(null);
         }
-        dm[0].push(buildDate(d));
+        dm[0].push(buildDateObj(d));
       } else {
-        dm[dm.length - 1].push(buildDate(d));
+        dm[dm.length - 1].push(buildDateObj(d));
       }
       d++;
     }
     return dm;
   }, [date.getMonth()]);
-  const getDefaultDayStyle = (d: null | boolean): void => {
+  const getDefaultDayStyle = (d: null | boolean): any => {
     return {
       textAlign: 'center',
       userSelect: 'none',
@@ -94,7 +97,7 @@ function Calendar(props: {
       cursor: d ? 'pointer' : 'default'
     };
   };
-  const getDayStyle = (d: null | boolean): void => {
+  const getDayStyle = (d: null | boolean): any => {
     return d ? props.selectedDayStyle || {} : {};
   };
   return (
